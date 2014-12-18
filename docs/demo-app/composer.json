@@ -1,0 +1,21 @@
+{
+    "name": "ex/app",
+    "description":"n/a",
+    "license": "proprietary",
+    "require": {
+        "bear/package": "~1.0@dev",
+        "ex/package": "~0.1@dev"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "Ex\\Skeleton\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    }
+}
