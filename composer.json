@@ -5,10 +5,10 @@
     "require": {
         "bear/package": "~1.0@dev",
         "aura/sql": "~2.1",
-        "vlucas/phpdotenv": "~1.0"
+        "vlucas/phpdotenv": "~1.0",
+        "doctrine/dbal": "~2.6@dev"
         },
     "require-dev": {
-        "phing/phing": "~2.8",
         "bear/qatools": "@dev"
     },
     "minimum-stability": "dev",
