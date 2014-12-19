@@ -6,6 +6,7 @@ Ex.Package
 ### include packages
 
  * [aura/sql](https://github.com/auraphp/Aura.Sql)
+ * [doctrine/dbal](https://github.com/doctrine/dbal)
  * [vlucas/phpdotenv](https://github.com/vlucas/phpdotenv)
  
 ## composer install
@@ -44,17 +45,27 @@ class AppModule extends AbstractModule
     $ cp vendor/ex/package/docs/demo-app/.env .
 
 .env
+
 ```
-DB_DSN=mysql:host=localhost;dbname=testdb
-DB_USER=username
-DB_PASS=password
+# aura/sql
+
+PDO_DSN=mysql:host=localhost;dbname=test
+PDO_USER=username
+PDO_PASSWORD=password
+
+# doctrine/dbal
+# @see http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html
+
+DBAL_CONFIG=driver=pdo_sqlite&path=/tmp/db.sqlite
+
 ```
  * [PDOドライバ](http://php.net/manual/ja/pdo.drivers.php)
 
 ## DI
 
 ### 
- * [AuraSqlInject](https://github.com/BEARSunday/Ex.Package/blob/master/src/Inject/AuraSqlInject.php) for `ExtendedPdoInterface` 
+ * [AuraSqlInject](https://github.com/BEARSunday/Ex.Package/blob/master/src/Inject/AuraSqlInject.php) for [ExtendedPdoInterface](https://github.com/auraphp/Aura.Sql/blob/develop-2/src/ExtendedPdoInterface.php) 
+ * [DbalInject](https://github.com/BEARSunday/Ex.Package/blob/master/src/Inject/DbalInject.php) for [Connection](https://github.com/doctrine/dbal/blob/master/lib/Doctrine/DBAL/Driver/Connection.php)
 
 ## Demo
 
