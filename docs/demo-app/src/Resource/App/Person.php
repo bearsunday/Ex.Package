@@ -13,6 +13,9 @@ class Person extends ResourceObject
     use AuraSqlInject;
     use DbalInject;
 
+    /**
+     * @param $id
+     */
     public function onGet($id)
     {
         $stmt = $this->pdo->query('SELECT name FROM person WHERE id=:id');
@@ -23,6 +26,8 @@ class Person extends ResourceObject
     }
 
     /**
+     * @param $name
+     *
      * @Link(rel="new", href="/person{?id}")
      */
     public function onPost($name)
@@ -35,8 +40,14 @@ class Person extends ResourceObject
         return $this;
     }
 
-    public function onPut()
+    /**
+     * @param string $id
+     * @param string $name
+     */
+    public function onPut($id, $name)
     {
-        var_dump($this->db instanceof Connection);
+        $this->db->executeUpdate('UPDATE person SET name = :name WHERE id = :id', ['id' => $id, 'name' => $name]);
+
+        return $this;
     }
 }
