@@ -5,10 +5,12 @@ namespace Ex\App\Resource\App;
 use BEAR\Resource\ResourceObject;
 use BEAR\Resource\Annotation\Link;
 use Ex\Package\Inject\AuraSqlInject;
+use Ex\Package\Inject\DbalInject;
 
 class Person extends ResourceObject
 {
     use AuraSqlInject;
+    use DbalInject;
 
     public function onGet($id)
     {
@@ -30,5 +32,11 @@ class Person extends ResourceObject
         $this['id'] = $this->pdo->lastInsertId();
 
         return $this;
+    }
+
+    public function onPut()
+    {
+        var_dump($this->db);
+
     }
 }

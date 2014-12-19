@@ -18,9 +18,9 @@ class PdoProvider implements ProviderInterface
     public function get()
     {
         $pdo = new ExtendedPdo(
-            $_ENV['DB_DSN'],
-            $_ENV['DB_USER'],
-            $_ENV['DB_PASS']
+            $_ENV['PDO_DSN'],
+            $_ENV['PDO_USER'],
+            $_ENV['PDO_PASSWORD']
         );
 
         return $pdo;

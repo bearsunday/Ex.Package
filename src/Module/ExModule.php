@@ -10,6 +10,8 @@ use Aura\Sql\ExtendedPdoInterface;
 use Dotenv;
 use Ray\Di\AbstractModule;
 use Ray\Di\Scope;
+use Doctrine\DBAL\Driver\Connection;
+
 
 class ExModule extends AbstractModule
 {
@@ -18,10 +20,9 @@ class ExModule extends AbstractModule
      */
     protected function configure()
     {
-        Dotenv::required(['DB_DSN', 'DB_USER', 'DB_PASS']);
+        Dotenv::required(['PDO_DSN', 'PDO_USR', 'PDO_PASSWORD']);
+        Dotenv::required(['DBAL_DSN']);
         $this->bind(ExtendedPdoInterface::class)->toProvider(PdoProvider::class)->in(Scope::SINGLETON);
+        $this->bind(Connection::class)->toProvider(DbalProvider::class)->in(Scope::SINGLETON);
     }
 }
-
-
-
