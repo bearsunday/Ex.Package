@@ -4,6 +4,7 @@ namespace Ex\App\Resource\App;
 
 use BEAR\Resource\ResourceObject;
 use BEAR\Resource\Annotation\Link;
+use Doctrine\DBAL\Driver\Connection;
 use Ex\Package\Inject\AuraSqlInject;
 use Ex\Package\Inject\DbalInject;
 
@@ -36,7 +37,6 @@ class Person extends ResourceObject
 
     public function onPut()
     {
-        var_dump($this->db);
-
+        var_dump($this->db instanceof Connection);
     }
 }

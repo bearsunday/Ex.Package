@@ -20,8 +20,8 @@ class ExModule extends AbstractModule
      */
     protected function configure()
     {
-        Dotenv::required(['PDO_DSN', 'PDO_USR', 'PDO_PASSWORD']);
-        Dotenv::required(['DBAL_DSN']);
+        Dotenv::required(['PDO_DSN', 'PDO_USER', 'PDO_PASSWORD']);
+        Dotenv::required(['DBAL_CONFIG']);
         $this->bind(ExtendedPdoInterface::class)->toProvider(PdoProvider::class)->in(Scope::SINGLETON);
         $this->bind(Connection::class)->toProvider(DbalProvider::class)->in(Scope::SINGLETON);
     }

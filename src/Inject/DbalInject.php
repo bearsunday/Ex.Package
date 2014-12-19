@@ -6,7 +6,7 @@
  */
 namespace Ex\Package\Inject;
 
-use Doctrine\DBAL\Connection;
+use Doctrine\DBAL\Driver\Connection;
 
 trait DbalInject
 {
@@ -18,7 +18,7 @@ trait DbalInject
     /**
      * @param Connection $db
      *
-     * @\Ray\Di\Di\Inject(optional=true)
+     * @\Ray\Di\Di\Inject
      */
     public function setDbalConnection(Connection $db = null)
     {

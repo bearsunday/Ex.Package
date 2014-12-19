@@ -21,10 +21,10 @@ trait AuraSqlInject
      *
      * @param LoggerInterface $logger
      *
-     * @\Ray\Di\Di\Inject(optional=true)
+     * @\Ray\Di\Di\Inject
      */
     public function setAuraSql(ExtendedPdoInterface $pdo)
     {
-        $this->$pdo = $pdo;
+        $this->pdo = $pdo;
     }
 }
