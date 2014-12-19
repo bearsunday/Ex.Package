@@ -22,7 +22,8 @@ class DbalProvider implements ProviderInterface
     public function __construct()
     {
         $config = [];
-        $this->config = parse_url($_ENV['DBAL_CONFIG'], $config);
+        parse_str($_ENV['DBAL_CONFIG'], $config);
+        $this->config = $config;
     }
 
     /**

@@ -4,6 +4,7 @@ namespace Ex\App\Resource\App;
 
 use BEAR\Resource\ResourceObject;
 use BEAR\Resource\Annotation\Link;
+use Doctrine\DBAL\Driver\Connection;
 use Ex\Package\Inject\AuraSqlInject;
 use Ex\Package\Inject\DbalInject;
 
@@ -12,6 +13,9 @@ class Person extends ResourceObject
     use AuraSqlInject;
     use DbalInject;
 
+    /**
+     * @param $id
+     */
     public function onGet($id)
     {
         $stmt = $this->pdo->query('SELECT name FROM person WHERE id=:id');
@@ -22,6 +26,8 @@ class Person extends ResourceObject
     }
 
     /**
+     * @param $name
+     *
      * @Link(rel="new", href="/person{?id}")
      */
     public function onPost($name)
@@ -34,9 +40,14 @@ class Person extends ResourceObject
         return $this;
     }
 
-    public function onPut()
+    /**
+     * @param string $id
+     * @param string $name
+     */
+    public function onPut($id, $name)
     {
-        var_dump($this->db);
+        $this->db->executeUpdate('UPDATE person SET name = :name WHERE id = :id', ['id' => $id, 'name' => $name]);
 
+        return $this;
     }
 }

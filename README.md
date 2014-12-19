@@ -6,6 +6,7 @@ Ex.Package
 ### include packages
 
  * [aura/sql](https://github.com/auraphp/Aura.Sql)
+ * [doctrine/dbal](https://github.com/doctrine/dbal)
  * [vlucas/phpdotenv](https://github.com/vlucas/phpdotenv)
  
 ## composer install
@@ -44,10 +45,19 @@ class AppModule extends AbstractModule
     $ cp vendor/ex/package/docs/demo-app/.env .
 
 .env
+
 ```
-DB_DSN=mysql:host=localhost;dbname=testdb
-DB_USER=username
-DB_PASS=password
+# aura/sql
+
+PDO_DSN=mysql:host=localhost;dbname=test
+PDO_USER=username
+PDO_PASSWORD=password
+
+# doctrine/dbal
+# @see http://docs.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/configuration.html
+
+DBAL_CONFIG=driver=pdo_sqlite&path=/tmp/db.sqlite
+
 ```
  * [PDOドライバ](http://php.net/manual/ja/pdo.drivers.php)
 
@@ -58,6 +68,6 @@ DB_PASS=password
 
 ## Demo
 
- * [demo-app](https://github.com/BEARSunday/Ex.Package/tree/master/docs/demo-app)
  * [data base access](https://github.com/BEARSunday/Ex.Package/blob/master/docs/demo-app/src/Resource/App/Person.php)
  * [.env](https://github.com/BEARSunday/Ex.Package/blob/master/docs/demo-app/.env)
+ * [demo-app](https://github.com/BEARSunday/Ex.Package/tree/master/docs/demo-app)

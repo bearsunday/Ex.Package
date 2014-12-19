@@ -10,10 +10,10 @@ use Doctrine\Common\Annotations\AnnotationRegistry;
 /**
  * @global string $context
  */
-namespace Ex\App;
 
 loader: {
-    $loader = require dirname(__DIR__) . '/vendor/autoload.php';
+    $loader = require dirname(dirname(dirname(__DIR__))) . '/vendor/autoload.php';
+    $loader->addPsr4('Ex\App\\', dirname(__DIR__) . '/src');
     /** @var $loader \Composer\Autoload\ClassLoader */
     AnnotationRegistry::registerLoader([$loader, 'loadClass']);
 }
