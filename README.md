@@ -12,7 +12,7 @@ Ex.Package
 ## composer install
 
 ```
-$ create-project bear/skeleton:~1.0@dev Vendor.Package // install bear.skeleton first
+$ composer create-project bear/skeleton:~1.0@dev Vendor.Package // install bear.skeleton first
 $ cd Vendor.Package
 $ composer install
 $ composer require ex/package:~0.1@dev
