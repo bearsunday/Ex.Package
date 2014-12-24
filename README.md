@@ -19,12 +19,10 @@ $ phpunit
 ```
 ## module install
 
-```
+```php
 use Ex\Package\ExAppModule;
 use Ray\Di\AbstractModule;
-
 use Ex\Package\ExAppModule;
-
 use BEAR\Package\AppMeta;
 use BEAR\Package\PackageModule;
 use Dotenv;
