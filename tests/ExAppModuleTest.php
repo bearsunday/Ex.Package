@@ -5,7 +5,6 @@ namespace BEAR\Package\Module;
 use BEAR\Sunday\Extension\Application\AppInterface;
 use Ex\Package\ExAppModule;
 use Ex\Skeleton\Module\ExApp;
-use FakeVendor\HelloWorld\Module\AppModule;
 use Ray\Di\Injector;
 
 class ExAppModuleTest extends \PHPUnit_Framework_TestCase

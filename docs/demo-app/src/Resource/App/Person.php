@@ -4,8 +4,8 @@ namespace Ex\App\Resource\App;
 
 use BEAR\Resource\ResourceObject;
 use BEAR\Resource\Annotation\Link;
-use BEAR\AuraSqlModule\AuraSqlInject;
-use BEAR\DbalModule\DbalInject;
+use Ray\AuraSqlModule\AuraSqlInject;
+use Ray\DbalModule\DbalInject;
 
 class Person extends ResourceObject
 {

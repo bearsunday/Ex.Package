@@ -1,6 +1,6 @@
 <?php
 
-namespace Ex\Skeleton\Module;
+namespace Ex\Skeleton;
 
 use BEAR\Sunday\Extension\Application\AbstractApp;
 
