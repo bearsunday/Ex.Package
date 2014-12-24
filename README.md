@@ -14,7 +14,6 @@ Ex.Package
 ```
 $ create-project bear/skeleton:~1.0@dev Vendor.Package // install bear.skeleton first
 $ cd Vendor.Package
-$ composer install
 $ composer require ex/package:~0.1@dev
 $ phpunit
 ```
@@ -26,14 +25,32 @@ use Ray\Di\AbstractModule;
 
 use Ex\Package\ExAppModule;
 
-class AppModule extends AbstractModule
+use BEAR\Package\AppMeta;
+use BEAR\Package\PackageModule;
+use Dotenv;
+use Ray\AuraSqlModule\AuraSqlModule;
+use Ray\DbalModule\DbalModule;
+use Ray\Di\AbstractModule;
+
+class ExAppModule extends AbstractModule
 {
     /**
      * {@inheritdoc}
      */
     protected function configure()
     {
-        $this->install(new ExAppModule);
+        // app meta
+        $appMeta = new AppMeta('Ex\App');
+        // dot env
+        Dotenv::load($appMeta->appDir);
+        Dotenv::required(['PDO_DSN', 'PDO_USER', 'PDO_PASSWORD']);
+        Dotenv::required(['DBAL_CONFIG']);
+        // bear/package
+        $this->install(new PackageModule($appMeta));
+        // ex/package
+        $this->install(new ExModule);
+        $this->install(new AuraSqlModule($_ENV['PDO_DSN'], $_ENV['PDO_USER']. $_ENV['PDO_PASSWORD']));
+        $this->install(new DbalModule($_ENV['DBAL_CONFIG']));
     }
 }
 ```
