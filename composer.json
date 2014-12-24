@@ -4,8 +4,8 @@
     "license": "proprietary",
     "require": {
         "bear/package": "~1.0@dev",
-        "bear/aura-sql-module": "~1.0@dev",
-        "bear/dbal-module": "~1.0@dev",
+        "ray/aura-sql-module": "~1.0@dev",
+        "ray/dbal-module": "~1.0@dev",
         "vlucas/phpdotenv": "~1.0"
         },
     "require-dev": {
