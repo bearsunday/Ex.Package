@@ -1,11 +1,11 @@
 {
     "name": "ex/package",
-    "description":"n/a",
+    "description":"Ex package for BEAR.Sunday",
     "license": "proprietary",
     "require": {
-        "bear/package": "~1.0@dev",
-        "ray/aura-sql-module": "~1.0@dev",
-        "ray/dbal-module": "~1.0@dev",
+        "bear/package": "~1.0",
+        "ray/aura-sql-module": "~1.0",
+        "ray/dbal-module": "~0.1",
         "vlucas/phpdotenv": "~1.0"
         },
     "require-dev": {
