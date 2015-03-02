@@ -2,7 +2,7 @@
 
 namespace Ex\Package;
 
-use BEAR\Package\AppMeta;
+use BEAR\AppMeta\AppMeta;
 use BEAR\Package\PackageModule;
 use Dotenv;
 use Ray\AuraSqlModule\AuraSqlModule;
