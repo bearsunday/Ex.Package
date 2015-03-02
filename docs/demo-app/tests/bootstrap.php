@@ -10,7 +10,7 @@ error_reporting(E_ALL);
 
 // load
 $loader = require dirname(dirname(dirname(__DIR__))) . '/vendor/autoload.php';
-/** @var $loader \Composer\Autoload\ClassLoader */
+/* @var $loader \Composer\Autoload\ClassLoader */
 $loader->addPsr4('Ex\App\\', __DIR__);
 AnnotationRegistry::registerLoader([$loader, 'loadClass']);
 

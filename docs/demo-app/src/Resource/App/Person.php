@@ -2,8 +2,8 @@
 
 namespace Ex\App\Resource\App;
 
-use BEAR\Resource\ResourceObject;
 use BEAR\Resource\Annotation\Link;
+use BEAR\Resource\ResourceObject;
 use Ray\AuraSqlModule\AuraSqlInject;
 use Ray\DbalModule\DbalInject;
 

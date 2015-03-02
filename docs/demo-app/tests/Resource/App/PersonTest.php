@@ -2,7 +2,7 @@
 
 namespace Ex\App\Resource\Page;
 
-class IndexTest extends \PHPUnit_Framework_TestCase
+class PersonTest extends \PHPUnit_Framework_TestCase
 {
     /**
      * @var \BEAR\Resource\ResourceInterface

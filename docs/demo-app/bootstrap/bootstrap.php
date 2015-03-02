@@ -2,25 +2,25 @@
 
 namespace Ex\App;
 
-use BEAR\Package\Bootstrap;
 use BEAR\Package\AppMeta;
-use Doctrine\Common\Cache\ApcCache;
+use BEAR\Package\Bootstrap;
 use Doctrine\Common\Annotations\AnnotationRegistry;
+use Doctrine\Common\Cache\ApcCache;
 
-/**
+/*
  * @global string $context
  */
 
 loader: {
     $loader = require dirname(dirname(dirname(__DIR__))) . '/vendor/autoload.php';
     $loader->addPsr4('Ex\App\\', dirname(__DIR__) . '/src');
-    /** @var $loader \Composer\Autoload\ClassLoader */
+    /* @var $loader \Composer\Autoload\ClassLoader */
     AnnotationRegistry::registerLoader([$loader, 'loadClass']);
 }
 
 route: {
     $app = (new Bootstrap)->newApp(new AppMeta(__NAMESPACE__), $context, new ApcCache);
-    /** @var $app \BEAR\Sunday\Extension\Application\AbstractApp */
+    /* @var $app \BEAR\Sunday\Extension\Application\AbstractApp */
     $_SERVER; // touch for $GLOBALS['_SERVER']
     $request = $app->router->match($GLOBALS);
 }
@@ -32,7 +32,7 @@ try {
         ->uri($request->path)
         ->withQuery($request->query)
         ->request();
-    /** @var $page \BEAR\Resource\Request */
+    /* @var $page \BEAR\Resource\Request */
 
     // representation transfer
     $page()->transfer($app->responder);

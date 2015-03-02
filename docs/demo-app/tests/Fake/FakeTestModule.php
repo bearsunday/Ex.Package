@@ -9,5 +9,4 @@ use Ray\Di\AbstractModule;
  */
 class FakeTestModule extends AbstractModule
 {
-
 }
