@@ -1,3 +1,9 @@
+このレポジトリは[エキサイト](https://www.excite.co.jp/) のために作られました。
+
+This repository was created for [Excite Japan](https://www.excite.co.jp/).
+
+----
+
 Ex.Package
 ==========
 
